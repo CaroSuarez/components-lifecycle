@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+
+import ClassComponent from "./components/class-component";
+import FunctionalComponent from "./components/functional-component";
+
+import "./App.css";
 
 function App() {
+  const [mountClassComponent, setMountClassComponent] = useState(false);
+  const [mountFunctionalComponent, setMountFunctionalComponent] =
+    useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {mountClassComponent && <ClassComponent doNotShow={3} counterSeed={7} />}
+      {mountFunctionalComponent && <FunctionalComponent />}
+
+      <br></br>
+      <br></br>
+
+      <button onClick={() => setMountClassComponent(true)}>
+        Mount Class Component
+      </button>
+      <button onClick={() => setMountClassComponent(false)}>
+        Unmount Class Component
+      </button>
+      <button onClick={() => setMountFunctionalComponent(true)}>
+        Mount Class Component
+      </button>
+      <button onClick={() => setMountFunctionalComponent(false)}>
+        Unmount Class Component
+      </button>
     </div>
   );
 }
