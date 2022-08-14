@@ -7,6 +7,7 @@ class ClassComponent extends Component {
     this.state = {
       counter: 0,
     };
+
     console.log("1. Constructor");
     console.log("Component is initialized");
 
@@ -14,7 +15,7 @@ class ClassComponent extends Component {
     this.decrement = () => this.setState({ counter: this.state.counter - 1 });
   }
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props, state) { 
     console.log("2. getDerivedStateFromProps");
     console.log(
       "Gets the props and sets the state of the component using that props if it is required"

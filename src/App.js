@@ -13,7 +13,9 @@ function App() {
   return (
     <div className="App">
       {mountClassComponent && <ClassComponent doNotShow={3} counterSeed={7} />}
-      {mountFunctionalComponent && <FunctionalComponent />}
+      {mountFunctionalComponent && (
+        <FunctionalComponent doNotShow={3} counterSeed={7} />
+      )}
 
       <br></br>
       <br></br>
@@ -25,10 +27,10 @@ function App() {
         Unmount Class Component
       </button>
       <button onClick={() => setMountFunctionalComponent(true)}>
-        Mount Class Component
+        Mount Functional Component
       </button>
       <button onClick={() => setMountFunctionalComponent(false)}>
-        Unmount Class Component
+        Unmount Functional Component
       </button>
     </div>
   );
